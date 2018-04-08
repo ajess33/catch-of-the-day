@@ -9,7 +9,7 @@ class StorePicker extends React.Component {
     history: PropTypes.object
   };
 
-  goToStore = event => {
+  goToStore = (event) => {
     // 1. Stop the form from submitting
     event.preventDefault();
     // 2. Get the text from that input

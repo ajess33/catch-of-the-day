@@ -8,6 +8,7 @@ import Fish from './Fish';
 import base from '../base';
 
 class App extends React.Component {
+  // Initialize state using a property
   state = {
     fishes: {},
     order: {}
@@ -41,7 +42,7 @@ class App extends React.Component {
     base.removeBinding(this.ref);
   }
 
-  addFish = fish => {
+  addFish = (fish) => {
     // 1. Take a copy of the existing state
     const fishes = { ...this.state.fishes };
     // 2. Add new fish to that fishes variable
@@ -63,7 +64,7 @@ class App extends React.Component {
     this.setState({ fishes: fishes });
   };
 
-  deleteFish = key => {
+  deleteFish = (key) => {
     // 1. Take a copy of state
     const fishes = { ...this.state.fishes };
     // 2. Update the state
@@ -76,16 +77,16 @@ class App extends React.Component {
     this.setState({ fishes: sampleFishes });
   };
 
-  addToOrder = key => {
+  addToOrder = (key) => {
     // 1. Take a copy of state
     const order = { ...this.state.order };
     // 2. Either add to the order, or update the number in our order
     order[key] = order[key] + 1 || 1;
     // 3. Call setState  to update our state object
-    this.setState({ order });
+    this.setState({ order: order });
   };
 
-  removeFromOrder = key => {
+  removeFromOrder = (key) => {
     // 1. Take a copy of that state
     const order = { ...this.state.order };
     // 2. Update the state
@@ -102,7 +103,7 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Fresh Seafood Market" />
           <ul className="fishes">
-            {Object.keys(this.state.fishes).map(key => (
+            {Object.keys(this.state.fishes).map((key) => (
               <Fish
                 key={key}
                 // tricky!

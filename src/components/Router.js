@@ -8,8 +8,10 @@ const Router = () => (
   <BrowserRouter>
     <Switch>
       {/* Homepage */}
-      {/* Says, when the address is just foreward slash, render the StorePicker component */}
+      {/* Says, when the address is just forward slash, render the StorePicker component */}
       <Route exact path="/" component={StorePicker} />
+
+      {/* Catch all */}
       <Route path="/store/:storeId" component={App} />
       <Route component={NotFound} />
     </Switch>

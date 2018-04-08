@@ -12,12 +12,12 @@ class AddFishForm extends React.Component {
     addFish: PropTypes.func
   };
 
-  createFish = event => {
+  createFish = (event) => {
     // 1. Stop the form from submitting
     event.preventDefault();
     const fish = {
       name: this.nameRef.value.value,
-      price: parseFloat(this.priceRef.value.value), // time is in total seconds
+      price: parseFloat(this.priceRef.value.value), // changes time to total seconds
       status: this.statusRef.value.value,
       desc: this.descRef.value.value,
       image: this.imageRef.value.value
